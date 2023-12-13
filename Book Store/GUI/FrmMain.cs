@@ -125,7 +125,7 @@ namespace WindowsFormsApp1.GUI
 
             foreach (ListViewItem selectedItem in lv_bill.SelectedItems)
             {
-                total -= Convert.ToInt32(selectedItem.SubItems[3].Text);
+                total -= Convert.ToInt32(selectedItem.SubItems[4].Text);
                 lv_bill.Items.Remove(selectedItem);
             }
             txb_billTotalPrice.Text = total.ToString();
@@ -142,14 +142,34 @@ namespace WindowsFormsApp1.GUI
             lv_bill.FullRowSelect = true;
         }
 
+        //hàm rác nhưng đừng xóa, xóa bể giao diện
         private void lv_bill_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+        //xử lí nút thanh toán hóa đơn
         private void btn_Payment_Click(object sender, EventArgs e)
         {
-            BillDAO.Instance.InsertBill(Convert.ToInt32(txb_billTotalPrice.Text));
+            if(lv_bill.Items.Count != 0)
+            {
+                if(MessageBox.Show("Bạn có chắc thanh toán hóa đơn","Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    BillDAO.Instance.InsertBill(Convert.ToInt32(txb_billTotalPrice.Text));
+                    int idbill = BillDAO.Instance.GetMaxIDBill();
+                    foreach(ListViewItem item in  lv_bill.Items) 
+                    {
+                        int idbook = BookDAO.Instance.GetIDbyName(item.Text, item.SubItems[1].Text);
+                        int count = Convert.ToInt32(item.SubItems[3].Text);
+                        int total = Convert.ToInt32(item.SubItems[4].Text);
+                        BillInfoDAO.Instance.InsertBillInfo(idbill,idbook,count,total);
+                    }
+                    lv_bill.Items.Clear();
+                    LoadBook();
+                    MessageBox.Show("Thanh toán thành công");
+                }
+
+            }
 
             //BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(),)
         }

@@ -33,5 +33,9 @@ namespace WindowsFormsApp1.DAO
             }
             return bookList;
         }
+        public int GetIDbyName(string name, string auth)
+        {
+            return (int)DataProvider.Instance.ExecuteScalar("USP_GetIDBookByName @name , @auth",new object[] {name,auth});
+        }
     }
 }

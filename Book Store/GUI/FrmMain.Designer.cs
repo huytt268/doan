@@ -82,10 +82,6 @@
             this.btn_RemoveBook = new MaterialSkin.Controls.MaterialButton();
             this.txb_billTotalPrice = new Bunifu.UI.WinForms.BunifuTextBox();
             this.lv_bill = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dgv_billFullBook = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuImageButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.btn_Payment = new MaterialSkin.Controls.MaterialButton();
@@ -118,6 +114,11 @@
             this.btn_AddEmployee = new MaterialSkin.Controls.MaterialButton();
             this.Report = new System.Windows.Forms.TabPage();
             this.LogOut = new System.Windows.Forms.TabPage();
+            this.lv_billname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_billauth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_billprice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_billcount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_billtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.DoanhThu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_icBill)).BeginInit();
@@ -390,6 +391,7 @@
             this.dgv_icBill.Location = new System.Drawing.Point(53, 81);
             this.dgv_icBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_icBill.Name = "dgv_icBill";
+            this.dgv_icBill.ReadOnly = true;
             this.dgv_icBill.RowHeadersVisible = false;
             this.dgv_icBill.RowHeadersWidth = 51;
             this.dgv_icBill.RowTemplate.Height = 40;
@@ -744,7 +746,7 @@
             this.txb_billTotalPrice.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txb_billTotalPrice.Lines = new string[] {
         "0"};
-            this.txb_billTotalPrice.Location = new System.Drawing.Point(805, 639);
+            this.txb_billTotalPrice.Location = new System.Drawing.Point(850, 641);
             this.txb_billTotalPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txb_billTotalPrice.MaxLength = 32767;
             this.txb_billTotalPrice.MinimumSize = new System.Drawing.Size(1, 1);
@@ -799,45 +801,27 @@
             this.lv_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.lv_bill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lv_bill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.lv_billname,
+            this.lv_billauth,
+            this.lv_billprice,
+            this.lv_billcount,
+            this.lv_billtotal});
             this.lv_bill.Depth = 0;
             this.lv_bill.FullRowSelect = true;
+            this.lv_bill.GridLines = true;
             this.lv_bill.HideSelection = false;
-            this.lv_bill.Location = new System.Drawing.Point(647, 347);
+            this.lv_bill.Location = new System.Drawing.Point(626, 343);
             this.lv_bill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lv_bill.MinimumSize = new System.Drawing.Size(200, 100);
             this.lv_bill.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lv_bill.MouseState = MaterialSkin.MouseState.OUT;
             this.lv_bill.Name = "lv_bill";
             this.lv_bill.OwnerDraw = true;
-            this.lv_bill.Size = new System.Drawing.Size(593, 270);
+            this.lv_bill.Size = new System.Drawing.Size(627, 270);
             this.lv_bill.TabIndex = 11;
             this.lv_bill.UseCompatibleStateImageBehavior = false;
             this.lv_bill.View = System.Windows.Forms.View.Details;
             this.lv_bill.SelectedIndexChanged += new System.EventHandler(this.lv_bill_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Tên sách";
-            this.columnHeader1.Width = 139;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Số lượng";
-            this.columnHeader2.Width = 104;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đơn giá";
-            this.columnHeader3.Width = 125;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Thành tiền";
-            this.columnHeader4.Width = 120;
             // 
             // dgv_billFullBook
             // 
@@ -890,14 +874,15 @@
             this.dgv_billFullBook.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.dgv_billFullBook.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgv_billFullBook.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_billFullBook.Location = new System.Drawing.Point(22, 121);
+            this.dgv_billFullBook.Location = new System.Drawing.Point(22, 52);
             this.dgv_billFullBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_billFullBook.Name = "dgv_billFullBook";
+            this.dgv_billFullBook.ReadOnly = true;
             this.dgv_billFullBook.RowHeadersVisible = false;
             this.dgv_billFullBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgv_billFullBook.RowTemplate.Height = 40;
             this.dgv_billFullBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_billFullBook.Size = new System.Drawing.Size(581, 561);
+            this.dgv_billFullBook.Size = new System.Drawing.Size(581, 625);
             this.dgv_billFullBook.TabIndex = 10;
             this.dgv_billFullBook.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dgv_billFullBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_billFullBook_CellClick);
@@ -1547,6 +1532,34 @@
             this.LogOut.Text = "Đăng Xuất";
             this.LogOut.UseVisualStyleBackColor = true;
             // 
+            // lv_billname
+            // 
+            this.lv_billname.Text = "Tên sách";
+            this.lv_billname.Width = 116;
+            // 
+            // lv_billauth
+            // 
+            this.lv_billauth.Text = "Tác giả";
+            this.lv_billauth.Width = 116;
+            // 
+            // lv_billprice
+            // 
+            this.lv_billprice.Text = "Đơn giá";
+            this.lv_billprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.lv_billprice.Width = 80;
+            // 
+            // lv_billcount
+            // 
+            this.lv_billcount.Text = "Số lượng";
+            this.lv_billcount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.lv_billcount.Width = 72;
+            // 
+            // lv_billtotal
+            // 
+            this.lv_billtotal.Text = "Thành tiền";
+            this.lv_billtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.lv_billtotal.Width = 92;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1644,10 +1657,6 @@
         private MaterialSkin.Controls.MaterialButton btn_NewBook;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton1;
         private Bunifu.UI.WinForms.BunifuDataGridView dgv_billFullBook;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private MaterialSkin.Controls.MaterialListView lv_icBillInfo;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
@@ -1659,5 +1668,10 @@
         public MaterialSkin.Controls.MaterialListView lv_bill;
         private MaterialSkin.Controls.MaterialButton btn_RemoveBook;
         public Bunifu.UI.WinForms.BunifuTextBox txb_billTotalPrice;
+        private System.Windows.Forms.ColumnHeader lv_billname;
+        private System.Windows.Forms.ColumnHeader lv_billauth;
+        private System.Windows.Forms.ColumnHeader lv_billprice;
+        private System.Windows.Forms.ColumnHeader lv_billcount;
+        private System.Windows.Forms.ColumnHeader lv_billtotal;
     }
 }

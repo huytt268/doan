@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.GUI
             materialSkinManager.ColorScheme = new ColorScheme(primary: Primary.Grey900, darkPrimary: Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-
+        
         //Sự kiện thêm dự liệu vào list view
        public FrmMain frmMain;
        private void btn_billAdd_Click(object sender, EventArgs e)
@@ -45,8 +45,9 @@ namespace WindowsFormsApp1.GUI
                     int total = Convert.ToInt32(txb_billAmount.Text) * Convert.ToInt32(txb_billCost.Text);
                     // Assuming listView1 is the name of your ListView control
                     ListViewItem item = new ListViewItem(txb_billName.Text);
-                    item.SubItems.Add(txb_billAmount.Text);
+                    item.SubItems.Add(txb_billAuth.Text);
                     item.SubItems.Add(txb_billCost.Text);
+                    item.SubItems.Add(txb_billAmount.Text);
                     item.SubItems.Add(total.ToString());                                      
                     frmMain.lv_bill.Items.Add(item);
                     int temp = Convert.ToInt32(frmMain.txb_billTotalPrice.Text);
