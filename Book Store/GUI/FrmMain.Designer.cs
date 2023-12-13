@@ -956,6 +956,7 @@
             this.btn_Payment.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_Payment.UseAccentColor = false;
             this.btn_Payment.UseVisualStyleBackColor = true;
+            this.btn_Payment.Click += new System.EventHandler(this.btn_Payment_Click);
             // 
             // btn_AddBookSale
             // 

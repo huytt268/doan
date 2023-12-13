@@ -74,16 +74,16 @@ namespace WindowsFormsApp1.GUI
         }
 
         //Khai báo biến để không cần gọi đi gọi lại
-        FrmBill frmBill = new FrmBill();
+        //FrmBill frmBill = new FrmBill();
         
 
         //Sự kiện khi click cell của dtgv
         private void dgv_billFullBook_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmBill.txb_billName.Text = dgv_billFullBook.SelectedRows[0].Cells[1].Value.ToString();
-            frmBill.txb_billAuth.Text = dgv_billFullBook.SelectedRows[0].Cells[2].Value.ToString();
-            frmBill.txb_billCost.Text = dgv_billFullBook.SelectedRows[0].Cells[6].Value.ToString();
-            frmBill.txb_RemainAmount.Text = dgv_billFullBook.SelectedRows[0].Cells[4].Value.ToString();
+            //frmBill.txb_billName.Text = dgv_billFullBook.SelectedRows[0].Cells[1].Value.ToString();
+            //frmBill.txb_billAuth.Text = dgv_billFullBook.SelectedRows[0].Cells[2].Value.ToString();
+            //frmBill.txb_billCost.Text = dgv_billFullBook.SelectedRows[0].Cells[6].Value.ToString();
+            //frmBill.txb_RemainAmount.Text = dgv_billFullBook.SelectedRows[0].Cells[4].Value.ToString();
         }                     
 
         #endregion
@@ -96,24 +96,39 @@ namespace WindowsFormsApp1.GUI
 
         private void btn_AddBookSale_Click(object sender, EventArgs e)
         {
-            
-            frmBill.Owner = this;
-            if(frmBill == null || frmBill.IsDisposed)
+            if(dgv_billFullBook.SelectedRows.Count == 0)
             {
-                frmBill = new FrmBill();
-
+                MessageBox.Show("Vui lòng chọn sách cần thêm");
             }
-            frmBill.Show();
+            else
+            {
+                FrmBill frmBill = new FrmBill();
+                frmBill.frmMain = this;
+                //frmBill.Owner = this;
+                //if (frmBill == null || frmBill.IsDisposed)
+                //{
+                //    frmBill = new FrmBill();
+                //}
+                frmBill.txb_billName.Text = dgv_billFullBook.SelectedRows[0].Cells[1].Value.ToString();
+                frmBill.txb_billAuth.Text = dgv_billFullBook.SelectedRows[0].Cells[2].Value.ToString();
+                frmBill.txb_billCost.Text = dgv_billFullBook.SelectedRows[0].Cells[6].Value.ToString();
+                frmBill.txb_RemainAmount.Text = dgv_billFullBook.SelectedRows[0].Cells[4].Value.ToString();
+                frmBill.Show();
+            }
+            
             
         }
         
         private void DeleteCheckedItems()
         {
-            
+            int total = Convert.ToInt32(txb_billTotalPrice.Text);
+
             foreach (ListViewItem selectedItem in lv_bill.SelectedItems)
             {
+                total -= Convert.ToInt32(selectedItem.SubItems[3].Text);
                 lv_bill.Items.Remove(selectedItem);
             }
+            txb_billTotalPrice.Text = total.ToString();
         }
 
         private void btn_RemoveBook_Click(object sender, EventArgs e)
@@ -130,6 +145,13 @@ namespace WindowsFormsApp1.GUI
         private void lv_bill_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Payment_Click(object sender, EventArgs e)
+        {
+            BillDAO.Instance.InsertBill(Convert.ToInt32(txb_billTotalPrice.Text));
+
+            //BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(),)
         }
     }
 }

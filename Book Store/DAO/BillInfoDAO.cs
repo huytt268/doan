@@ -32,5 +32,9 @@ namespace WindowsFormsApp1.DAO
             }
             return listBillInfo;
         }
+        public void InsertBillInfo(int idbill, int idbook, int count, int total)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idbill , @idbook , @count , @total", new object[] { idbill, idbook, count, total });
+        }
     }
 }

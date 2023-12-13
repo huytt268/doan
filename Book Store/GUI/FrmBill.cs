@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.GUI
 {
     public partial class FrmBill : MaterialForm
     {
+        
         public FrmBill()
         {
             InitializeComponent();
@@ -27,11 +28,12 @@ namespace WindowsFormsApp1.GUI
             materialSkinManager.ColorScheme = new ColorScheme(primary: Primary.Grey900, darkPrimary: Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        
+
         //Sự kiện thêm dự liệu vào list view
+       public FrmMain frmMain;
        private void btn_billAdd_Click(object sender, EventArgs e)
         {
-            FrmMain frmMain = this.Owner as FrmMain;
+            //FrmMain frmMain = this.Owner as FrmMain;
             if (txb_billName.Text == "" || txb_billAuth.Text == "" || txb_billAmount.Text == "")
                 MessageBox.Show("Vui lòng nhập đủ thông tin");
             else
@@ -50,6 +52,7 @@ namespace WindowsFormsApp1.GUI
                     int temp = Convert.ToInt32(frmMain.txb_billTotalPrice.Text);
                     temp = temp + total;
                     frmMain.txb_billTotalPrice.Text = temp.ToString();
+                    this.Close();
                 }
             }
         }

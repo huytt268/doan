@@ -21,5 +21,21 @@ namespace WindowsFormsApp1.DAO
         {
             return (int)DataProvider.Instance.ExecuteScalar("");
         }
+        public void InsertBill(int total)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_AddBill @total", new object[] {total});
+        }
+        public int GetMaxIDBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(MAHD) FROM HOADON");
+
+            }
+            catch
+            {
+                return 1;
+            }
+        }
     }
 }
