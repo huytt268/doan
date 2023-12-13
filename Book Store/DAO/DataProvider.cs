@@ -19,7 +19,7 @@ namespace WindowsFormsApp1.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=LAPTOP-HJSRG3SJ\\SQLEXPRESS;Initial Catalog=QUANLINHASACH;Integrated Security=True";
+        private string connectionSTR = "Data Source=DESKTOP-R6QPDDA\\SQLEXPRESS;Initial Catalog=QUANLINHASACH;Integrated Security=True;";
 
         //Trả ra những dòng kết quả
         public DataTable ExecuteQuery(string query, object[] parameter = null)
