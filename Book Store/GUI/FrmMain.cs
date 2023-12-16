@@ -122,10 +122,23 @@ namespace WindowsFormsApp1.GUI
         private void DeleteCheckedItems()
         {
             int total = Convert.ToInt32(txb_billTotalPrice.Text);
-
+            
+            
             foreach (ListViewItem selectedItem in lv_bill.SelectedItems)
             {
+                for (int i = 0; i < dgv_billFullBook.Rows.Count; i++)
+                {
+                    if (dgv_billFullBook.Rows[i].Cells[1].Value.Equals(selectedItem.SubItems[0].Text) &&
+                        dgv_billFullBook.Rows[i].Cells[2].Value.Equals(selectedItem.SubItems[1].Text))
+                    {
+                        int currentvalue = Convert.ToInt32(dgv_billFullBook.Rows[i].Cells[4].Value);
+                        dgv_billFullBook.Rows[i].Cells[4].Value = currentvalue + Convert.ToInt32(selectedItem.SubItems[3].Text);
+                        break;
+                    }
+                }
                 total -= Convert.ToInt32(selectedItem.SubItems[4].Text);
+                
+                
                 lv_bill.Items.Remove(selectedItem);
             }
             txb_billTotalPrice.Text = total.ToString();
@@ -133,6 +146,7 @@ namespace WindowsFormsApp1.GUI
 
         private void btn_RemoveBook_Click(object sender, EventArgs e)
         {
+            
             DeleteCheckedItems();                
         }
 
@@ -140,6 +154,7 @@ namespace WindowsFormsApp1.GUI
         {
             lv_bill.GridLines = true;
             lv_bill.FullRowSelect = true;
+            lv_bill.AutoSize = false;
         }
 
         //hàm rác nhưng đừng xóa, xóa bể giao diện
