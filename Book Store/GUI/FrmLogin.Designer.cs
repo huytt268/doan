@@ -33,14 +33,9 @@
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.txb_Password = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.Cb_Remember = new MaterialSkin.Controls.MaterialCheckbox();
             this.btn_Login = new MaterialSkin.Controls.MaterialButton();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuImageButton3 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.bunifuPanel4 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.btn_LostPass = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lb_Register = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel5 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lb_User = new Bunifu.UI.WinForms.BunifuLabel();
@@ -48,7 +43,6 @@
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPanel2.SuspendLayout();
             this.bunifuPanel3.SuspendLayout();
-            this.bunifuPanel4.SuspendLayout();
             this.bunifuPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,22 +164,6 @@
             this.txb_Password.UseSystemPasswordChar = false;
             this.txb_Password.ValidatingType = null;
             // 
-            // Cb_Remember
-            // 
-            this.Cb_Remember.Depth = 0;
-            this.Cb_Remember.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Cb_Remember.Location = new System.Drawing.Point(49, 250);
-            this.Cb_Remember.Margin = new System.Windows.Forms.Padding(0);
-            this.Cb_Remember.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.Cb_Remember.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Cb_Remember.Name = "Cb_Remember";
-            this.Cb_Remember.ReadOnly = false;
-            this.Cb_Remember.Ripple = true;
-            this.Cb_Remember.Size = new System.Drawing.Size(195, 42);
-            this.Cb_Remember.TabIndex = 4;
-            this.Cb_Remember.Text = "Nhớ mật khẩu";
-            this.Cb_Remember.UseVisualStyleBackColor = true;
-            // 
             // btn_Login
             // 
             this.btn_Login.AutoSize = false;
@@ -194,7 +172,7 @@
             this.btn_Login.Depth = 0;
             this.btn_Login.HighEmphasis = true;
             this.btn_Login.Icon = null;
-            this.btn_Login.Location = new System.Drawing.Point(49, 318);
+            this.btn_Login.Location = new System.Drawing.Point(49, 270);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_Login.MouseState = MaterialSkin.MouseState.HOVER;
             this.btn_Login.Name = "btn_Login";
@@ -207,18 +185,6 @@
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
-            // materialDivider1
-            // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Location = new System.Drawing.Point(67, 16);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(4);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(567, 1);
-            this.materialDivider1.TabIndex = 6;
-            this.materialDivider1.Text = "materialDivider1";
-            // 
             // bunifuPanel3
             // 
             this.bunifuPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -229,7 +195,7 @@
             this.bunifuPanel3.BorderRadius = 3;
             this.bunifuPanel3.BorderThickness = 1;
             this.bunifuPanel3.Controls.Add(this.bunifuImageButton3);
-            this.bunifuPanel3.Location = new System.Drawing.Point(4, 79);
+            this.bunifuPanel3.Location = new System.Drawing.Point(4, 111);
             this.bunifuPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
@@ -271,59 +237,6 @@
             this.bunifuImageButton3.Zoom = 0;
             this.bunifuImageButton3.ZoomSpeed = 10;
             // 
-            // bunifuPanel4
-            // 
-            this.bunifuPanel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPanel4.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel4.BackgroundImage")));
-            this.bunifuPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel4.BorderColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel4.BorderRadius = 3;
-            this.bunifuPanel4.BorderThickness = 1;
-            this.bunifuPanel4.Controls.Add(this.btn_LostPass);
-            this.bunifuPanel4.Controls.Add(this.lb_Register);
-            this.bunifuPanel4.Controls.Add(this.materialDivider1);
-            this.bunifuPanel4.Location = new System.Drawing.Point(4, 574);
-            this.bunifuPanel4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuPanel4.Name = "bunifuPanel4";
-            this.bunifuPanel4.ShowBorders = true;
-            this.bunifuPanel4.Size = new System.Drawing.Size(669, 114);
-            this.bunifuPanel4.TabIndex = 10;
-            // 
-            // btn_LostPass
-            // 
-            this.btn_LostPass.AllowParentOverrides = false;
-            this.btn_LostPass.AutoEllipsis = false;
-            this.btn_LostPass.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btn_LostPass.CursorType = System.Windows.Forms.Cursors.Default;
-            this.btn_LostPass.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LostPass.Location = new System.Drawing.Point(184, 49);
-            this.btn_LostPass.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_LostPass.Name = "btn_LostPass";
-            this.btn_LostPass.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_LostPass.Size = new System.Drawing.Size(163, 29);
-            this.btn_LostPass.TabIndex = 9;
-            this.btn_LostPass.Text = "Quên mật khẩu?";
-            this.btn_LostPass.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.btn_LostPass.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lb_Register
-            // 
-            this.lb_Register.AllowParentOverrides = false;
-            this.lb_Register.AutoEllipsis = false;
-            this.lb_Register.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lb_Register.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lb_Register.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Register.Location = new System.Drawing.Point(355, 49);
-            this.lb_Register.Margin = new System.Windows.Forms.Padding(4);
-            this.lb_Register.Name = "lb_Register";
-            this.lb_Register.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lb_Register.Size = new System.Drawing.Size(79, 29);
-            this.lb_Register.TabIndex = 8;
-            this.lb_Register.Text = "Đăng ký";
-            this.lb_Register.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lb_Register.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // bunifuPanel5
             // 
             this.bunifuPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -338,9 +251,8 @@
             this.bunifuPanel5.Controls.Add(this.bunifuLabel1);
             this.bunifuPanel5.Controls.Add(this.btn_Login);
             this.bunifuPanel5.Controls.Add(this.bunifuPanel1);
-            this.bunifuPanel5.Controls.Add(this.Cb_Remember);
             this.bunifuPanel5.Controls.Add(this.bunifuPanel2);
-            this.bunifuPanel5.Location = new System.Drawing.Point(4, 204);
+            this.bunifuPanel5.Location = new System.Drawing.Point(4, 245);
             this.bunifuPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPanel5.Name = "bunifuPanel5";
             this.bunifuPanel5.ShowBorders = true;
@@ -401,9 +313,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 692);
+            this.ClientSize = new System.Drawing.Size(677, 650);
             this.Controls.Add(this.bunifuPanel5);
-            this.Controls.Add(this.bunifuPanel4);
             this.Controls.Add(this.bunifuPanel3);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -415,8 +326,6 @@
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel2.ResumeLayout(false);
             this.bunifuPanel3.ResumeLayout(false);
-            this.bunifuPanel4.ResumeLayout(false);
-            this.bunifuPanel4.PerformLayout();
             this.bunifuPanel5.ResumeLayout(false);
             this.bunifuPanel5.PerformLayout();
             this.ResumeLayout(false);
@@ -429,15 +338,10 @@
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
         private MaterialSkin.Controls.MaterialMaskedTextBox txb_Password;
-        private MaterialSkin.Controls.MaterialCheckbox Cb_Remember;
         private MaterialSkin.Controls.MaterialButton btn_Login;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel3;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel4;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel5;
         private Bunifu.UI.WinForms.BunifuImageButton bunifuImageButton3;
-        private Bunifu.UI.WinForms.BunifuLabel lb_Register;
-        private Bunifu.UI.WinForms.BunifuLabel btn_LostPass;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuLabel lb_User;

@@ -155,6 +155,7 @@
     <Compile Include="DAO\BillInfoDAO.cs" />
     <Compile Include="DAO\BookDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillDetail.cs" />
     <Compile Include="DTO\BillInfo.cs" />

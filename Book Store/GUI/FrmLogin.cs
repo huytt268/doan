@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using WindowsFormsApp1.DAO;
+using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.GUI
 {
@@ -30,7 +31,8 @@ namespace WindowsFormsApp1.GUI
             string password = txb_Password.Text;
             if (Check_Login(username, password))
             {
-                FrmMain f = new FrmMain();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUsername(username);
+                FrmMain f = new FrmMain(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
